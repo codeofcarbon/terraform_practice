@@ -101,7 +101,7 @@ resource "aws_instance" "ubuntu_ec2" {
   ami           = "ami-0866a3c8686eaeeba"
   instance_type = "t2.micro"
 
-  subnet_id     = data.aws_subnets.default.ids
+  subnet_id     = data.aws_subnets.default.ids[0]
 
   tags = {
     Name = "UbuntuInstance"
@@ -128,7 +128,7 @@ resource "aws_instance" "amazon_linux_ec2" {
   ami           = "ami-0fff1b9a61dec8a5f"
   instance_type = "t2.micro"
 
-  subnet_id     = data.aws_subnets.default.ids
+  subnet_id     = data.aws_subnets.default.ids[0]
 
   tags = {
     Name = "AmazonLinuxInstance"
